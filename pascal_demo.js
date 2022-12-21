@@ -50,7 +50,8 @@ print = function () { };
 var XHR_PREFIX = ""
 
 function doParse(src, dst) {
-  var source = document.getElementById(src).value,
+  var source = editor.getValue(),
+  //var source = document.getElementById(src).value,
       outElem = document.getElementById(dst),
       parser = new parse.Parser(),
       ast = null;
