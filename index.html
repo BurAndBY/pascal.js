@@ -5,7 +5,8 @@
 <body>
   <style>
     #editor {
-    position: absolute;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
     width: 500px;
     height: 400px;
 }
@@ -37,7 +38,7 @@ Pascal Source: <select id="source_file"></select><br>
 <br>
 <input value="Parse" type="button"
        onclick="var codepas = editor.getValue(); doParse(codepas, 'the_ast'); doIR('the_ast', 'the_ir'); doCompile('the_ir', 'the_js'); doExecute('the_js', 'the_output')">
-<br>
+<!--- <br>
 Abstract Syntax Tree:<br>
 <textarea id="the_ast" cols=90 rows=5 style="border: 1px solid black; margin-bottom: 0.6em">
 </textarea>
@@ -59,7 +60,7 @@ Compiled JavaScript:<br>
 <br>
 <input value="Execute/evaluate JS" type="button"
        onclick="doExecute('the_js', 'the_output')">
-<br>
+<br> --->
 Execution Output:<br>
 <textarea id="the_output" cols=90 rows=5 style="border: 1px solid black; margin-bottom: 0.6em">
 </textarea>
