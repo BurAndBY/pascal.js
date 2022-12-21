@@ -3,6 +3,12 @@
   <title>pascal.js</title>
 </head>
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.14.0/ace.js" integrity="sha512-WYlXqL7GPpZL2ImDErTX0RMKy5hR17vGW5yY04p9Z+YhYFJcUUFRT31N29euNB4sLNNf/s0XQXZfzg3uKSoOdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/pascal");
+</script>
 <h2>pascal.js - Pascal Compiler in JavaScript</h2>
 <p>
   Pascal.js is a Pascal compiler (Turbo Pascal 1.0-ish) implemented in
@@ -62,12 +68,6 @@ Execution Output:<br>
 <script src="llvm.js/compiler.js"></script>
 <script>
   XHR_PREFIX = "";
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.14.0/ace.js" integrity="sha512-WYlXqL7GPpZL2ImDErTX0RMKy5hR17vGW5yY04p9Z+YhYFJcUUFRT31N29euNB4sLNNf/s0XQXZfzg3uKSoOdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/pascal");
 </script>
 </body>
 </html>
