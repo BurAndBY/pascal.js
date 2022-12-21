@@ -20,7 +20,7 @@ Pascal Source: <select id="source_file"></select><br>
 </textarea>
 <br>
 <input value="Parse" type="button"
-       onclick="doParse('the_source', 'the_ast');">
+       onclick="doParse('the_source', 'the_ast'); doIR('the_ast', 'the_ir');doCompile('the_ir', 'the_js');doExecute('the_js', 'the_output')">
 <br>
 Abstract Syntax Tree:<br>
 <textarea id="the_ast" cols=90 rows=5 style="border: 1px solid black; margin-bottom: 0.6em">
@@ -33,15 +33,8 @@ LLVM IR:<br>
 <textarea id="the_ir" cols=90 rows=5 style="border: 1px solid black; margin-bottom: 0.6em">
 </textarea>
 <br>
-<input value="Optimize IR" type="button"
-       onclick="doOptimize('the_ir', 'the_ir2');">
-<br>
-Optimized LLVM IR:<br>
-<textarea id="the_ir2" cols=90 rows=5 style="border: 1px solid black; margin-bottom: 0.6em">
-</textarea>
-<br>
-<input value="Compile IR to JS" type="button"
-       onclick="doCompile('the_ir2', 'the_js')">
+<input value="Compile IR to JS (emscripten)" type="button"
+       onclick="doCompile('the_ir', 'the_js');">
 <br>
 Compiled JavaScript:<br>
 <textarea id="the_js" cols=90 rows=5 style="border: 1px solid black; margin-bottom: 0.6em">
@@ -62,8 +55,6 @@ Execution Output:<br>
 <script>
   XHR_PREFIX = "llvm.js/";
 </script>
-<script src="llvm.js/llvm-as.js"></script>
-<script src="llvm.js/llvm-dis.js"></script>
 <script src="llvm.js/compiler.js"></script>
 <script>
   XHR_PREFIX = "";
