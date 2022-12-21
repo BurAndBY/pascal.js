@@ -18,9 +18,12 @@
 Pascal Source: <select id="source_file"></select><br>
 <textarea id="the_source" cols=90 rows=13 style="background-color: #eeeeff; border: 1px solid black; margin-top: 0.3em; margin-bottom: 0.3em">
 </textarea>
+<div id="editor">begin
+writeln('ok');
+end.</div>
 <br>
 <input value="Parse" type="button"
-       onclick="doParse('the_source', 'the_ast');">
+       onclick="doParse(editor.getValue();, 'the_ast');">
 <br>
 Abstract Syntax Tree:<br>
 <textarea id="the_ast" cols=90 rows=5 style="border: 1px solid black; margin-bottom: 0.6em">
@@ -32,6 +35,7 @@ Abstract Syntax Tree:<br>
 LLVM IR:<br>
 <textarea id="the_ir" cols=90 rows=5 style="border: 1px solid black; margin-bottom: 0.6em">
 </textarea>
+
 <br>
 <input value="Compile IR to JS (emscripten)" type="button"
        onclick="doCompile('the_ir', 'the_js');">
@@ -59,6 +63,7 @@ Execution Output:<br>
 <script>
   XHR_PREFIX = "";
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.14.0/ace.js" integrity="sha512-WYlXqL7GPpZL2ImDErTX0RMKy5hR17vGW5yY04p9Z+YhYFJcUUFRT31N29euNB4sLNNf/s0XQXZfzg3uKSoOdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
 
